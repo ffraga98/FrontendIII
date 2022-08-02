@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creando elementos con React</title>
+</head>
+<body>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+<div id="root"> </div>
+
+<script type="text/javascript">
+// Traslado de maquetado HTML a código utilizando React
+/*
+
+  <body>
+    <h1>Con lo visto hasta ahora</h1>
+    <h2>Replica este HTML</h2>
+    <h3>Usando</h3>
+    <h4>React.js</h4>
+    <footer>Suerte!</footer>
+  </body>
+
+*/
+const elemento1 = React.createElement("h1", null, "Con lo visto hasta ahora");
+const elemento2 = React.createElement("h2", null, "Replica este HTML");
+const elemento3 = React.createElement("h3", null, "Usando");
+const elemento4 = React.createElement("h4", null, "React.js");
+const elemento5 = React.createElement("footer", null, "Suerte!");
+const body = React.createElement("body", null, [elemento1,elemento2,elemento3,elemento4,elemento5]);
+
+ReactDOM.render(body, document.getElementById("root"));
+
+</script>
