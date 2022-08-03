@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock en verduleri­a</title>
+</head>
+
+<body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id="root">
+
+        <!-- <h1>Lista de Productos en stock:</h1>
+      <ul>
+        <li>Manzana</li>
+        <li>Pera</li>
+        <li>Naranja</li>
+        <li>Banana</li>
+        <li>Kiwi</li>
+      </ul>
+      <h2>Productos en falta:</h2>
+      <ul>
+        <li>Durazno</li>
+        <li>Cereza</li>
+        <li>Anana</li>
+      </ul> -->
+
+    </div>
+
+    <script type="text/babel">
+        const productosEnFalta = [
+            "Manzana",
+            "Pera",
+            "Naranja",
+            "Banana",
+            "Kiwi"
+        ]
+
+        const productosEnStock = [
+            "Durazno",
+            "Cereza",
+            "Anana"
+        ]
+
+        function ProductosEnStock(props) {
+            const elements = props.productos.map((prod) =>
+                <li>{prod}</li>
+            );
+
+            const listado =
+                <div>
+                    <h1> Productos en Stock </h1>
+                    <ul>{elements}</ul>
+                </div>
+
+            return listado;
+        }
+
+        function ProductosEnFalta(props) {
+
+            const elements = props.productos.map((prod) =>
+                <li>{prod}</li>
+            );
+
+            const listado =
+                <div>
+                    <h2> Productos en falta </h2>
+                    <ul>{elements}</ul>
+                </div>
+
+            return listado;
+
+        }
+
+
+        function Productos(props) {
+            return <div>
+                <ProductosEnStock productos={props.productosEnStock} />
+                <ProductosEnFalta productos={props.productosEnFalta} />
+            </div>
+
+        }
+
+        ReactDOM.render(
+            <Productos productosEnFalta={productosEnFalta} productosEnStock={productosEnStock}/>, document.getElementById("root")
+        );
+    </script>
+</body>
+
+</html>
